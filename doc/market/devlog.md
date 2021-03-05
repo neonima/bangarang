@@ -4,22 +4,58 @@
 - Error management
 - Backend
 - Official video >> subscribe to form in order to be informed about demo & launch
-
+- BDD > Feature scenarios:
+    - Signing Out.
+    - Declaring Multiple Proposal Claim.
+    - Unregistering. (remove claims)
 - ❌ To-do / Not Finished
 - 👉 Doing
 - ✔️ Done
 
-## 2021/03/01
- - Stand Up
- - Clean architecture / Business Logic
- - Summary.
+## 2021/03/08 — Day 17
+- Twitch Live Stream
+- ✔️ Stand Up
+- ATDD/TDD > Clean architecture / Business Logic
+    - Declaring Simple Claim
+    - Retrieving Claim.
+    - Searching Claims.
+    - Claiming.
+    - Registering.
+- Typing uuid.
+- Summary.
+
+## 2021/03/05 — Day 16
+- ✔️ Stand Up
+- ❌ ATDD/TDD > Clean architecture / Business Logic
+    - ✔️ Signing In.
+    - ❌ Declaring Simple Claim
+    - ❌ Retrieving Claim.
+    - ❌ Searching Claims.
+    - ❌ Claiming.
+    - ❌ Registering.
+- ❌ Typing uuid.
+- ✔️ Summary.
+
+## 2021/03/01 — Day 15
+ - ✔️ Stand Up
+ - ✔️ BDD > Feature scenarios:
+    - ✔️ Signing In.
+    - ✔️ Declaring Simple Claim.
+    - ✔️ Retrieving Claim.
+    - ✔️ Searching Claims.
+    - ✔️ Claiming.
+    - ✔️ Registering.
+ - ❌ ATDD/TDD > Clean architecture / Business Logic
+    - ❌ Signing In.
+ - ❌ typing uuid
+ - ✔️ Summary.
 
 ## 2021/02/26 — Day 14
  - ✔️ Stand Up
  - ✔️ Declare
  - ✔️ Cleaning
  - ❌ Clean architecture / Business Logic
- - 👉 Summary.
+ - ✔️ Summary.
 
 ## 2021/02/22 — Day 13
  - ✔️ Stand Up
