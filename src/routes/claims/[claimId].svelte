@@ -2,25 +2,34 @@
     import {currentClaimIdStore} from "../../client/stores/currentClaimIdStore"
 	export async function preload(page:any, session:any) {
         const { claimId } = page.params;
-        let claim:ClaimContract;
-        currentClaimIdStore.set(claimId)
-        declaringClaimStore.subscribe(declaringClaim => {
-            if (declaringClaim.declaringClaimStatus === "declaringClaim" && declaringClaim.claimToDeclare) claim = declaringClaim.claimToDeclare
-            else claim = retreiveClaimById(claimId)
+        let claim:ClaimContractWithMemberPreviousClaimChoice|undefined;
+        retrievingClaimById(claimId) 
+        retrievingClaimUserNotificationStore.subscribe(retrievingClaimUserNotification => {
+            console.log(retrievingClaimUserNotification)
+            if(retrievingClaimUserNotification.status === "Success" && retrievingClaimUserNotification.claimWithMemberPreviousClaimChoice) {
+                claim = retrievingClaimUserNotification.claimWithMemberPreviousClaimChoice
+                currentClaimIdStore.set(claim.id)
+            }
         })
-		return { claim };
+		if (claim) return { claim };
 	}
 </script>
 <script lang="ts">
-    export let claim:ClaimContract
-    import type { ClaimContract } from "../../client/interfaces/ClaimContract";
-    import {claimingStore} from "../../client/stores/claimingStore"
-    import {declaringClaimStore} from "../../client/stores/declaringClaimStore"
-    import { retreiveClaimById } from "../../client/logic/claim/retreiveClaimById";
+    export let claim:ClaimContractWithMemberPreviousClaimChoice
+    import {claimingUserNotificationStore} from "../../client/stores/claimingStore"
     import ClaimView from "../../client/views/ClaimView.svelte"
-    currentClaimIdStore.set(claim.id)
-    claimingStore.subscribe(claiming => {
-        if(claiming.claimingStatus === "claimed") claim=retreiveClaimById(claim.id)
-    })
+    import type {  ClaimContractWithMemberPreviousClaimChoice } from "../../client/port/ClaimContract";
+    import { retrievingClaimUserNotificationStore } from "../../client/stores/retrievingClaimStore";
+    import { retrievingClaimById } from "../../client/logic/retrievingClaimById";
+    import type { RetrievingClaimUserNotificationContract } from "../../client/port/interactors/RetrievingClaimUserNotificationInteractorContract";
+    import type { ClaimingUserNotificationContract } from "../../client/port/interactors/ClaimingUserNotificationInteractorContract";
+    const shouldRetrieveClaimOnSuccessClaimingNotification=(claimingUserNotification: ClaimingUserNotificationContract)=> {if(claimingUserNotification.status === "Success") retrievingClaimById(claim.id)}
+    const shouldAffectClaim=(retrievingClaimUserNotification: RetrievingClaimUserNotificationContract):void=> {if(retrievingClaimUserNotification.status === "Success" && retrievingClaimUserNotification.claimWithMemberPreviousClaimChoice) claim=retrievingClaimUserNotification.claimWithMemberPreviousClaimChoice}
+    claimingUserNotificationStore
+        .subscribe(claimingUserNotification =>  shouldRetrieveClaimOnSuccessClaimingNotification(claimingUserNotification))
+    retrievingClaimUserNotificationStore
+        .subscribe(retrievingClaimUserNotification => shouldAffectClaim(retrievingClaimUserNotification))
 </script>
-<ClaimView {claim}/>
+{#if claim}
+    <ClaimView {claim}/>
+{/if}

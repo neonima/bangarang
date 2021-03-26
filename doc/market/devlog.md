@@ -1,8 +1,8 @@
 # Bangarang — Product Development Log
-- Register
+- ? Builder placement on clean architecture
+- Backend
 - Multi-language — /!\ FR /!\
 - Error management
-- Backend
 - Official video >> subscribe to form in order to be informed about demo & launch
 - BDD > Feature scenarios:
     - Signing Out.
@@ -12,17 +12,68 @@
 - 👉 Doing
 - ✔️ Done
 
-## 2021/03/08 — Day 17
-- Twitch Live Stream
-- ✔️ Stand Up
-- ATDD/TDD > Clean architecture / Business Logic
-    - Declaring Simple Claim
-    - Retrieving Claim.
-    - Searching Claims.
-    - Claiming.
-    - Registering.
-- Typing uuid.
+## 2021/03/26 — Day 22
+- ✔️ Twitch Live Stream https://www.twitch.tv/benjaminbohec
+- ✔️ Stand Up 
+- ✔️ ATDD/TDD > Logic Repair
+- Link Business Logic <> UI : UI Adapter
+    - ✔️ Claiming
+    - ✔️ searching claim
+    - ✔️ Declare claim
+    - ✔️ SSR claim link
+    - ✔️ registering 
+    - ✔️ signing in
+- Backend
 - Summary.
+
+## 2021/03/22 — Day 21
+- ✔️ Twitch Live Stream https://www.twitch.tv/benjaminbohec
+- ✔️ Stand Up 
+- ✔️ ATDD/TDD > Clean architecture / Business Logic
+    - ✔️ Registering.
+    - ✔️ Remove password on User Contract
+- ❌ Link Business Logic <> UI : UI Adapter
+- ✔️ Summary.
+
+## 2021/03/19 — Day 20
+- ✔️ Twitch Live Stream https://www.twitch.tv/benjaminbohec
+- ✔️ Stand Up 
+- ❌ ATDD/TDD > Clean architecture / Business Logic
+    - ✔️ Claiming.
+    - ❌ Registering. >>> ? Builder placement on clean architecture
+- ✔️ Summary.
+
+## 2021/03/15 — Day 19
+- ❌ Twitch Live Stream
+- ✔️ Stand Up
+- ✔️ ATDD/TDD > Clean architecture / Business Logic
+    - ✔️ Searching Claims.
+        - ✔️ TDD Claim Sort Engine
+    - ❌ Claiming.
+- ✔️ Twitch Live Stream Announce : https://www.twitch.tv/benjaminbohec — Monday 9:00am/6:00pm & Friday 9:00am/6:00pm
+- ✔️ Summary.
+
+## 2021/03/12 — Day 18
+- ❌ Twitch Live Stream
+- ✔️ Stand Up
+- ✔️ Feedback
+- ❌ ATDD/TDD > Clean architecture / Business Logic
+    - ❌ Searching Claims.
+        - ❌ TDD Claim Sort Engine
+- ✔️ Summary.
+
+## 2021/03/08 — Day 17
+- ❌ Twitch Live Stream
+- ✔️ Stand Up + new Mic
+- ❌ ATDD/TDD > Clean architecture / Business Logic
+    - ✔️ Declaring Simple Claim.
+    - ✔️ Retrieving Claim.
+    - ❌ Searching Claims.
+    - ❌ Claiming.
+    - ❌ Registering.
+- ❌ Remove password on User Contract
+- ❌ Typing uuid.
+- ✔️ Summary.
 
 ## 2021/03/05 — Day 16
 - ✔️ Stand Up
